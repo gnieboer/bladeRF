@@ -390,6 +390,26 @@ bladerf_module str2module(const char *str)
     }
 }
 
+const char * trigger2str(bladerf_trigger trigger)
+{
+    switch (trigger) {
+        case BLADERF_TRIGGER_J71_4:
+            return "J71-4";
+
+        default:
+            return "Unknown";
+    }
+}
+
+bladerf_trigger str2trigger(const char *str)
+{
+    if (!strcasecmp("J71-4", str)) {
+        return BLADERF_TRIGGER_J71_4;
+    } else {
+        return BLADERF_TRIGGER_INVALID;
+    }
+}
+
 int str2loopback(const char *str, bladerf_loopback *loopback)
 {
     int status = 0;

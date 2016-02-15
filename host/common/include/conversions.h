@@ -234,6 +234,25 @@ const char * module2str(bladerf_module m);
 bladerf_module str2module(const char *str);
 
 /**
+ * Convert a trigger enumeration value to a string
+ *
+ * @param   trigger     Trigger item
+ *
+ * @return  String representation or "Unknown"
+ */
+const char * trigger2str(bladerf_trigger trigger);
+
+/**
+ * Conver a string to a trigger enumeration value. This is case-insensitive.
+ *
+ * @param   str         Trigger as a string. Should be:
+ *                      "J71-4"
+ *
+ * @return BLADERF_TRIGGER_J71_4 or BLADERF_TRIGGER_INVALID
+ */
+bladerf_trigger str2trigger(const char *str);
+
+/**
  * Convert a string to a loopback mode
  *
  * @param[in]   str         String to convert
